@@ -25,7 +25,7 @@ export class FrutaComponent {
   }
 
   ngOnInit(){
-  	this.cambiarNombre(this.nombre);
+  	this.cambiarNombre();
   	this.cambiarEdad(20);
   	console.log(this.nombre+''+this.mayorDeEdad);
 
