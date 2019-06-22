@@ -10,6 +10,8 @@ import { RopaService } from '../services/ropa.service';
 })
 export class HomeComponent implements OnInit {
   public titulo = "Pagina principal";
+  public listado_ropa:Array<string>;
+  public prenda_a_guardar:string;
   
   constructor(
     // Creamos la instancia
@@ -18,8 +20,19 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   	// Lalamamos al método prueba
-    console.log(this._ropaService.prueba('camisa nike'));
+    this.listado_ropa = this._ropaService.getRopa();
+    console.log(this.listado_ropa);
 
+  }
+
+  guardarPrenda(){
+    this._ropaService.addRopa(this.prenda_a_guardar);
+    this.prenda_a_guardar = null;
+  }
+
+  eliminarPrenda(index:number){
+    alert(index);
+    this._ropaService.deleteRopa(index);
   }
 
 }
