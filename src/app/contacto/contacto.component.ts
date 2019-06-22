@@ -21,4 +21,12 @@ export class ContactoComponent implements OnInit {
 		});
 	}
 
+	redirigir(){
+		this._router.navigate(['/contacto','Hola Carlos']);
+	}
+
+	redirigirDos(){
+		this._router.navigate(['/pagina-principal']);
+	}	
+
 }
