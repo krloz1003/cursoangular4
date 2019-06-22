@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-contacto',
+  selector: 'contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
+	public titulo = "Pagina de contacto de la web";
+	public parametro;
+	constructor(
+		private _route: ActivatedRoute,
+		private _router: Router
+	) { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this._route.params.forEach((params: Params) => {
+			this.parametro = params['page'];
+			console.log(params);
+		});
+	}
 
 }

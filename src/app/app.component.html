@@ -2,6 +2,17 @@
   <h1>
     Bienvenido al {{ title }}!
   </h1>
-  <app-empleado></app-empleado>
+  <nav>
+  	<a [routerLink]="['/pagina-principal']" [routerLinkActive]="['activado']" >Home</a>
+  	-
+  	<a [routerLink]="['/fruta']" [routerLinkActive]="['activado']" >Fruta</a>
+  	-
+  	<a [routerLink]="['/empleado']" [routerLinkActive]="['activado']" >Empleado</a>
+  	-
+  	<a [routerLink]="['/contacto']" [routerLinkActive]="['activado']" >Contacto</a>
+  </nav>
+  <!--<empleado></empleado>-->
+  <!-- Componente que carga las rutas de navegación -->
+  <router-outlet></router-outlet>
 </div>
   
