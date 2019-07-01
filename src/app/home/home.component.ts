@@ -12,11 +12,15 @@ export class HomeComponent implements OnInit {
   public titulo = "Pagina principal";
   public listado_ropa:Array<string>;
   public prenda_a_guardar:string;
+  public fecha;
+  public nombre = "Carlos Avila Aguilar";
   
   constructor(
     // Creamos la instancia
   	private _ropaService: RopaService
-  ) { }
+  ) {
+    this.fecha = new Date(2017,4,15);
+  }
 
   ngOnInit() {
   	// Lalamamos al método prueba
