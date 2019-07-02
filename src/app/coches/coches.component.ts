@@ -8,16 +8,22 @@ import { Coche } from './coche';
 })
 export class CochesComponent implements OnInit {
   public coche: Coche;
+  public coches:Array<Coche>;
 
   constructor() {
   	this.coche = new Coche("","","");
+  	this.coches = [
+  		new Coche("Seat panda", "120", "Blanco"),
+  		new Coche("Ford ranger", "250", "Rojo")
+  	];
   }
 
   ngOnInit() {
   }
 
   onSubmit(){
-  	console.log(this.coche);
+  	this.coches.push(this.coche);
+  	this.coche = new Coche("","","");  	
   }
 
 }
